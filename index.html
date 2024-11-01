@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Crossword Puzzle Generator</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Crossword Puzzle Generator</h1>
+        <!-- Theme Toggle (Optional) -->
+        <div class="theme-toggle">
+            <label for="toggle-switch">Dark Mode</label>
+            <input type="checkbox" id="toggle-switch" aria-label="Toggle Dark Mode">
+        </div>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button id="generate-btn" class="btn" aria-label="Generate New Crossword Puzzle">Generate New Puzzle</button>
+            <button id="check-btn" class="btn" aria-label="Check Crossword Answers">Check Answers</button>
+            <button id="reveal-btn" class="btn" aria-label="Reveal Crossword Answers">Reveal Answers</button> <!-- New Button -->
+        </div>
+
+        <!-- Loading Animation -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="puzzle" class="puzzle-grid"></div>
+
+        <div id="clues" class="clues-container">
+            <div class="clues-section">
+                <h2>Across</h2>
+                <ul id="across-clues"></ul>
+            </div>
+            <div class="clues-section">
+                <h2>Down</h2>
+                <ul id="down-clues"></ul>
+            </div>
+        </div>
+
+        <div id="result" class="result-message"></div>
+    </main>
+
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
