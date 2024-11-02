@@ -1,9 +1,38 @@
 const apiUrl = "https://crossword-endpoint-5815431822.us-central1.run.app/generate"; 
 
 
+
 let currentPuzzle = [];
 let currentClues = [];
 let correctPuzzle = [];
+
+
+
+// Function to wake up the backend server by calling the health endpoint
+async function wakeUpServer() {
+    const healthEndpoint = "https://crossword-endpoint-5815431822.us-central1.run.app/health"; 
+
+    try {
+        const response = await fetch(healthEndpoint, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            console.log('Backend server is awake and ready!');
+        } else {
+            console.warn(`Health check returned status: ${response.status}`);
+        }
+    } catch (error) {
+        console.error('Error waking up the backend server:', error);
+    }
+}
+
+// Call the wakeUpServer function at the start of the script
+wakeUpServer();
+
 
 // DOM Elements
 const generateBtn = document.getElementById("generate-btn");
